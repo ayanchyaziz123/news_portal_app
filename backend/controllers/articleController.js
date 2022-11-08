@@ -3,18 +3,14 @@ const mongoose = require('mongoose');
 const Review = require('../models/review');
 const Category = require('../models/category');
 const review = require('../models/review');
-const Order = require('../models/order');
 const User = require('../models/user');
 
 
 
 exports.dashboard = async  (req, res, next) =>{
     try{
-        const pending_orders = await Order.countDocuments({isDelivered: false});
         const recent_users = await User.countDocuments();
-        console.log("pending ", pending_orders, recent_users)
         return res.status(200).json({
-            pending_orders: pending_orders,
             recent_users: recent_users
         })
     }
@@ -102,7 +98,6 @@ exports.deleteArticle = async (req, res, next) => {
 
 
 exports.createArticle = async (req, res, next) => {
-    console.log("Hello world..2.2202022020")
     try {
         const newArticle = new Article({
             category: 'sanple category',

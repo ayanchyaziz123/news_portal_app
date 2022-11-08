@@ -120,7 +120,7 @@ function ArticleScreen({ match, history }) {
                                             </Col>
                                             <Col md={4}>
                                                 <Link to={`/article/${article._id}`}>
-                                                    <Card.Img src={`http://localhost:4000/${article.image}`} className="img-fluid ps rounded mx-auto d-block" />
+                                                    <Card.Img src={`http://localhost:4000/${article.image}`} />
                                                 </Link>
                                             </Col>
                                         </Row>

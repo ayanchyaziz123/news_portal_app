@@ -1,6 +1,6 @@
 const Category = require('../models/category');
 const mongoose = require('mongoose');
-const Product = require('../models/product');
+const Article = require('../models/article');
 
 
 
@@ -11,10 +11,10 @@ exports.getFilterCategories = async (req, res, next) => {
         var arrBrand = brand.split(',');
     
 
-        var products;
+        var articles;
         const brands = new Set([]);
-        products = await Product.find({ category: id }).populate('review');
-        var data = await Product.find({ category: id });
+        articles = await Article.find({ category: id }).populate('review');
+        var data = await Article.find({ category: id });
         for (let i in data) {
             const val = data[i].brand.split(" ").join("").toLowerCase();
 
@@ -26,18 +26,18 @@ exports.getFilterCategories = async (req, res, next) => {
             return res.status(200).json({
                 message: "category loaded Successfully",
                 brands: myArr,
-                products: products
+                articles: articles
             })
 
         }
         else {
   
-            products = await Product.find({ 'brand': { $in: arrBrand } }).populate('review');
+            articles = await Article.find({ 'brand': { $in: arrBrand } }).populate('review');
         
             return res.status(200).json({
                 message: "category loaded Successfully",
                 brands: myArr,
-                products: products
+                articles: articles
             })
         }
 

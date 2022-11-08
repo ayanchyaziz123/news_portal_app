@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
 const reviewSchema = new mongoose.Schema({
-    product: {
+    article: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'product',
+        ref: 'article',
         required: true,
     },
     user: {

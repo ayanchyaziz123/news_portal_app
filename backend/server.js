@@ -31,8 +31,7 @@ connectDatabase();
 
 app.use(cors({ origin: true, credentials: true }));
 const user = require('./routes/userRoute');
-const article = require('./routes/productRoute');
-const order = require('./routes/orderRoute');
+const article = require('./routes/articleRoute');
 const category = require('./routes/categoryRoute');
 
 
@@ -47,8 +46,6 @@ app.use('/api/user', user);
 app.use('/api/article', article);
 
 
-// API for users
-app.use('/api/order', order);
 
 // API for users
 app.use('/api/category', category);

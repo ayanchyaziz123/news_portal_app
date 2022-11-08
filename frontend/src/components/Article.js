@@ -4,7 +4,7 @@ import Rating from './Rating'
 import { Link } from 'react-router-dom'
 
 
-function Product({ article }) {
+function Article({ article }) {
     var total = article && article.review && article.review.length > 0 ? article.review.reduce((accum, item) => accum + item.rating, 0) : 0;
     return (
         <div className="card my-2 p-2">
@@ -37,4 +37,4 @@ function Product({ article }) {
     )
 }
 
-export default Product
+export default Article;

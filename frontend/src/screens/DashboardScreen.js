@@ -58,7 +58,7 @@ const DashboardScreen = ({history}) =>{
                         bg="info"
                         className="mb-2 text-white text-center"
                     >
-                        <Card.Header className="nav-text"><i class="fas fa-shopping-cart"></i> Pending Orders </Card.Header>
+                        <Card.Header className="nav-text"><i class="fas fa-shopping-cart"></i> Blogs Rating </Card.Header>
                         <Card.Body>
                             <Card.Title>{pendingOrders} </Card.Title>
                 
@@ -72,7 +72,7 @@ const DashboardScreen = ({history}) =>{
                         bg="dark"
                         className="mb-2 text-white text-center"
                     >
-                        <Card.Header className="nav-text"><i class="fas fa-users"></i> Users</Card.Header>
+                        <Card.Header className="nav-text"><i class="fas fa-users"></i> Users </Card.Header>
                         <Card.Body>
                             <Card.Title>{newCustomers && newCustomers} </Card.Title>
                         </Card.Body>

@@ -27,7 +27,6 @@ router.route('/getArticle/:id').get(getArticle); // for admin
 router.route('/imageUpload').post(upload.single('image'), imageUpload);
 router.route('/updateArticle/:id').put(isAdminCheck, updateArticle);
 router.route('/deleteArticle/:id').delete(isAdminCheck, deleteArticle);
-router.route('/offerArticle').get(offerArticle);
 router.route('/:id/createReview').post(checkLogIn ,createReview);
 router.route('/dashboard').get(dashboard);
 
